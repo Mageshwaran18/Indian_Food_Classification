@@ -1,0 +1,71 @@
+21.1.25
+
+Text Classification:-
+
+     * tf.data --> tf.data API makes it possible to handle large amounts of data, read from different data formats, and 
+perform complex transformations.
+
+     * tf.data.DataSet --> The tf.data API introduces a tf.data.Dataset abstraction that represents a sequence of elements, in 
+which each element consists of one or more components
+
+     * Batch Size --> Batch size is a hyperparameter that defines the number of samples that will be propagated through the network at once.
+
+     * text_dataset_from_directory
+
+     1. Format & Structure:
+        - tf.keras creates a tf.data.Dataset object optimized for TensorFlow operations and streaming
+        - sklearn returns simple numpy arrays or pandas dataframes
+
+     2. Memory Efficiency:
+        - tf.keras loads data in batches, making it more memory efficient for large datasets
+        - sklearn loads all data into memory at once
+
+    * TextVectorization
+    * Buffer size --> Buffer size controls how many elements can be prefetched and stored in memory
+    * Autotune --> AUTOTUNE lets TensorFlow dynamically adjust the buffer size based on available resources , 
+    * I/O  Bottleneck --> I/O (Input/Output) bottlenecks occur when data transfer between storage (disk) and memory 
+    * Cache() --> keeps data in memory after first epoch 
+    * prefetch () --> overlaps data preprocessing and model execution
+    * embeddings --> Used to understand the semantic meaning of words from one to another in a text 
+
+    Adam (Adaptive Moment Estimation):
+        * Popular optimization algorithm used for training deep learning models
+        * Combines ideas from two other optimizers: RMSprop and Momentum
+        * Key features:
+            - Adapts learning rates for each parameter
+            - Uses estimates of first and second moments of gradients
+            - Includes bias correction
+            - Good default choice for many deep learning applications
+        * Hyperparameters:
+            - Learning rate (default: 0.001)
+            - Beta1 (default: 0.9) - Exponential decay rate for first moment
+            - Beta2 (default: 0.999) - Exponential decay rate for second moment
+            - Epsilon (default: 1e-7) - Small constant for numerical stability
+
+
+------------------------------------------
+22.1.25
+
+        Transfer Learning and Fineetuning:
+
+        Transfer learning is a broader concept that includes:
+
+            Feature extraction (frozen pre-trained layers)
+            Fine-tuning (updating some or all pre-trained layers)
+            Knowledge distillation
+            Domain adaptation
+
+        Feature Extraction:- It's like using a sophisticated camera that knows how to identify edges, textures, and patterns, but we're teaching it to recognize new specific objects
+        Use the representations learned by a previous network to extract meaningful features from new samples.
+        Fineetuning :- Real-world example: Let's say the original model was trained to recognize cats and dogs, and now you want to classify different breeds of dogs:
+
+Feature Extraction: You keep all the learned features about edges, fur textures, shapes but only train a new classifier to recognize specific breeds
+Fine-Tuning: You allow the model to slightly modify its high-level understanding of dog features (like ear shapes, snout lengths) while keeping basic feature detection (edges, colors) frozen
+Key differences:
+
+Feature Extraction is faster and prevents overfitting when you have a small dataset
+Fine-Tuning can achieve better accuracy but requires more data and careful training to prevent destroying the useful features learned
+Think of it like this:
+
+Feature Extraction is like hiring an experienced art critic (pre-trained model) to describe paintings, but you're training a new person to make final judgments based on those descriptions
+Fine-Tuning is like taking that art critic and giving them additional specialized training in a specific art style while keeping their basic art knowledge intact
