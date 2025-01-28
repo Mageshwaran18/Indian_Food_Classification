@@ -1,6 +1,10 @@
 ## Flow Chart
 
-### 1. Create an Environment and Setup GPU 
+### 1. Create an Environment
+
+--> To create an enviironment, run the following command in the terminal: conda create -n food-classification python=3.9
+--> To activate the enviornment, run the following command in the terminal: conda activate food-classification
+--> Install the required packages by running the following command in the terminal: pip install -r requirements.txt
 
 ### 2. Data Collection
 - Number of Classes = 7
@@ -8,17 +12,15 @@
   - Idly
   - Noodles
   - Purrota
-  - Chapathi
   - Grill Chicken
   - Fish Fry
-
-Note: All classes except Grill Chicken and Fish Fry should have 200-250 data samples. Grill Chicken and Fish Fry will have class imbalance.
+Use this extension to download images from the google -> https://chromewebstore.google.com/detail/download-all-images/ifipmflagepipjokmbdecpmjbibjnakm?hl=en
 
 ### 3. Data Preprocessing
 - Resize images to 224 x 224 (Input shape for MobileNet)
-- Normalize pixel values
-- Apply data augmentation
-- Handle class imbalance
+- Normalize pixel values between 0 and 1
+- Apply data augmentation --> Using ImageDataGenerator class from keras.preprocessing.image
+- Handle class imbalance --> Stratified K fold cross validation
 
 ### 4. Model Development
 - Design the architecture of the model
