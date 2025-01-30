@@ -19,14 +19,11 @@ Use this extension to download images from the google -> https://chromewebstore.
 ### 3. Data Preprocessing
 - Resize images to 224 x 224 (Input shape for MobileNet)
 - Normalize pixel values between 0 and 1
-- Apply data augmentation --> Using ImageDataGenerator class from keras.preprocessing.image
-- Handle class imbalance --> Stratified K fold cross validation
+- Handle class imbalance --> Apply data augmentation using ImageDataGenerator class from keras.preprocessing.image
 
 ### 4. Model Development
 - Design the architecture of the model
 - Train the model
-- Perform transfer learning
-- Compare the two models
 - Save and load the model
 
 ### 5. Deployment
